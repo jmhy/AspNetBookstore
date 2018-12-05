@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AspNetBookstore.Models;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace AspNetBookstore.Controllers
 {
     public class StoreController : Controller
     {
+        BookstoreEntities storeDB = new BookstoreEntities();
+
         public ActionResult Index()
         {
-            return View();
+            var categories = storeDB.Categories.ToList();
+            return View(categories);
         }
 
         public ActionResult Browse()
