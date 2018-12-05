@@ -17,7 +17,7 @@ namespace AspNetBookstore.Models
         [DisplayName("Category")]
         public int CategoryId { get; set; }
 
-        [Required(ErrorMessage = "A Book Title is required")]
+        [Required(ErrorMessage = "Book Title is required")]
         [StringLength(160)]
         public string Title { get; set; }
 

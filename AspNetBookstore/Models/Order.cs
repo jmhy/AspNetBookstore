@@ -1,7 +1,9 @@
-﻿
+﻿using System.Web.Mvc;
+
 namespace AspNetBookstore.Models
 {
-    public class Order
+    [Bind(Exclude = "OrderId")]
+    public partial class Order
     {
     }
 }
