@@ -14,18 +14,20 @@ namespace AspNetBookstore.Controllers
             return View(categories);
         }
 
-        public ActionResult Browse()
+        public ActionResult Browse(string category)
         {
             ViewBag.Message = "Browse Selection";
+            var categoryModel = storeDB.Categories.Include("Books").Single(c => c.Name == category);
 
-            return View();
+            return View(categoryModel);
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
             ViewBag.Message = "Details";
+            var book = storeDB.Books.Find(id);
 
-            return View();
+            return View(book);
         }
     }
 }

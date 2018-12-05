@@ -1,0 +1,20 @@
+﻿@model AspNetBookstore.Models.Category
+
+@{
+    ViewBag.Title = "Browse Books";
+}
+
+<div class="category">
+    <h3><em>@Model.Name</em> Books</h3>
+
+    <ul id="book-list">
+        @foreach (var book in Model.Books)
+        {
+            <li>
+                <a href="@Url.Action("Details", new { id = book.BookId })">
+                    <span>@book.Title</span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
