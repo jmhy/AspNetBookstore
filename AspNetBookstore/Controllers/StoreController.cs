@@ -29,5 +29,13 @@ namespace AspNetBookstore.Controllers
 
             return View(book);
         }
+
+        [ChildActionOnly]
+        public ActionResult CategoryMenu()
+        {
+            var categories = storeDB.Categories.ToList();
+
+            return PartialView(categories);
+        }
     }
 }
