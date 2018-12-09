@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace AspNetBookstore.Models
 {
-    public class SampleData : DropCreateDatabaseAlways<BookstoreEntities>
+    public class SampleData : CreateDatabaseIfNotExists<AspNetBookstoreContext>
     {
-        protected override void Seed(BookstoreEntities context)
+        protected override void Seed(AspNetBookstoreContext context)
         {
             var categories = new List<Category>
             {

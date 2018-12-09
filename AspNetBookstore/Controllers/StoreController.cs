@@ -6,7 +6,7 @@ namespace AspNetBookstore.Controllers
 {
     public class StoreController : Controller
     {
-        BookstoreEntities storeDB = new BookstoreEntities();
+        AspNetBookstoreContext storeDB = new AspNetBookstoreContext();
 
         public ActionResult Index()
         {
