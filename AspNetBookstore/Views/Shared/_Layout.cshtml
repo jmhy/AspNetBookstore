@@ -6,6 +6,9 @@
     <title>@ViewBag.Title - ASP.NET Bookstore</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @(this.RenderSection("scripts", required: false))
 
 </head>
 <body>
@@ -25,6 +28,7 @@
                     <li>@Html.ActionLink("Store", "Index", "Store")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@{Html.RenderAction("CartSummary", "ShoppingCart");}</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -37,9 +41,5 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
 </html>
